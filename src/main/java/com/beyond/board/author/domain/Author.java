@@ -2,6 +2,7 @@ package com.beyond.board.author.domain;
 
 import com.beyond.board.author.dto.AuthorDetailDto;
 import com.beyond.board.author.dto.AuthorListResDto;
+import com.beyond.board.common.BaseTimeEntity;
 import com.beyond.board.post.domain.Post;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Author {
+public class Author extends BaseTimeEntity {
 //    도메인 : Author (id, name, email, password, role(Enum: ADMIN, USER), createdTime, updatedTime)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,12 +41,6 @@ public class Author {
 
     @OneToMany(mappedBy = "author")
     private List<Post> posts;
-
-    @CreationTimestamp
-    private LocalDateTime createdTime;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedTime;
 
 //    @Builder // 매개변수의 개수, 순서 유연하게 해줌
 //    public Author(String name, String email, String password, Role role){
@@ -69,7 +64,7 @@ public class Author {
                 .name(this.name)
                 .email(this.email)
                 .password(this.password)
-                .createdTime(this.createdTime)
+                .createdTime(this.getCreatedTime())
                 .build();
 
         return authorDetailDto;

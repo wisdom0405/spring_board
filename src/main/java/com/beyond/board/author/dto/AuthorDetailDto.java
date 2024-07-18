@@ -16,13 +16,11 @@ import java.time.LocalDateTime;
 public class AuthorDetailDto {
 
     private Long id;
-
     private String name;
-
     private String email;
-
     private String password;
-
+    private Role role;
+    private int postCounts;
     private LocalDateTime createdTime;
 
     public AuthorDetailDto fromEntity(Author author){
@@ -31,6 +29,8 @@ public class AuthorDetailDto {
                 .name(author.getName())
                 .email(author.getEmail())
                 .password(author.getPassword())
+                .role(author.getRole())
+                .postCounts(author.getPosts().size())
                 .createdTime(author.getCreatedTime())
                 .build();
     }

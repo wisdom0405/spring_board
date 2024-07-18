@@ -1,6 +1,7 @@
 package com.beyond.board.post.domain;
 
 import com.beyond.board.author.domain.Author;
+import com.beyond.board.common.BaseTimeEntity;
 import com.beyond.board.post.dto.PostDetResDto;
 import com.beyond.board.post.dto.PostListResDto;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class Post extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,16 +34,11 @@ public class Post {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    @CreationTimestamp
-    private LocalDateTime createdTime;
-
-    @UpdateTimestamp
-    private LocalDateTime updatedTime;
-
     public PostListResDto listFromEntity(){
         PostListResDto postListResDto = PostListResDto.builder()
                 .id(this.id)
                 .title(this.title)
+//                .author(this.author) // 이렇게 하면 순환참조 발생
                 .author_email(this.author.getEmail())
                 .build();
 
@@ -50,6 +46,13 @@ public class Post {
     }
 
     public PostDetResDto detFromEntity(){
-        return null;
+        return PostDetResDto.builder()
+                .id(this.id)
+                .title(this.title)
+                .contents(this.contents)
+                .author_email(this.author.getEmail())
+                .createdTime(this.getCreatedTime())
+                .updatedTime(this.getUpdatedTime())
+                .build();
     }
 }

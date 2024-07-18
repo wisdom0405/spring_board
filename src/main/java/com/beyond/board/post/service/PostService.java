@@ -10,6 +10,7 @@ import com.beyond.board.post.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,8 +49,8 @@ public class PostService {
     }
 
     public PostDetResDto postDetail(Long id){
-
-        return null;
+        Post post = postRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("id에 해당하는 사용자가 없습니다."));
+        return post.detFromEntity();
     }
 
 }
