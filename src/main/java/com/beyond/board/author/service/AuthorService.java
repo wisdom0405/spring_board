@@ -2,7 +2,7 @@ package com.beyond.board.author.service;
 
 import com.beyond.board.author.domain.Author;
 import com.beyond.board.author.dto.AuthorDetResDto;
-import com.beyond.board.author.dto.AuthorReqDto;
+import com.beyond.board.author.dto.AuthorSaveReqDto;
 import com.beyond.board.author.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,13 +19,15 @@ public class AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    public void authorCreate(AuthorReqDto dto){
+    public Author authorCreate(AuthorSaveReqDto dto){
         Author author = dto.toEntity(); // MemberReqDto 객체 메서드
 
-        if(authorRepository.findByEmail(dto.getEmail()).isPresent()){
-            throw new IllegalArgumentException("이미 존재하는 Email 입니다.");
-        }
-        authorRepository.save(author); // 저장된 멤버
+//        if(authorRepository.findByEmail(dto.getEmail()).isPresent()){
+//            throw new IllegalArgumentException("이미 존재하는 Email 입니다.");
+//        }
+//
+        Author savedAuthor = authorRepository.save(author); // 저장된 멤버
+        return savedAuthor;
     }
 
     public AuthorDetResDto authorDetail(Long id){

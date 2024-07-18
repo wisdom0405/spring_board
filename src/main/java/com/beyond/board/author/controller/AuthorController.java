@@ -1,7 +1,7 @@
 package com.beyond.board.author.controller;
 
 import com.beyond.board.author.dto.AuthorDetResDto;
-import com.beyond.board.author.dto.AuthorReqDto;
+import com.beyond.board.author.dto.AuthorSaveReqDto;
 import com.beyond.board.author.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +17,10 @@ public class AuthorController {
     }
 
     @PostMapping("/author/create")
-    public void authorCreatePost(AuthorReqDto dto){
+    public String authorCreatePost(@RequestBody AuthorSaveReqDto dto){
         authorService.authorCreate(dto);
+        return "ok";
     }
-
-
 
     @GetMapping("/author/detail/{id}")
     public AuthorDetResDto authorDetail(@PathVariable Long id){

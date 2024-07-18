@@ -1,5 +1,6 @@
 package com.beyond.board.author.dto;
 
+import com.beyond.board.author.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ public class AuthorDetResDto {
     private String name;
     private String email;
     private String password;
-    private Enum role;
+    private Role role;
     private String createdTime;
     private String updateTime;
 
