@@ -1,6 +1,7 @@
 package com.beyond.board.author.domain;
 
-import com.beyond.board.author.dto.AuthorDetResDto;
+import com.beyond.board.author.dto.AuthorDetailDto;
+import com.beyond.board.author.dto.AuthorListResDto;
 import com.beyond.board.post.domain.Post;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -44,7 +45,7 @@ public class Author {
     private LocalDateTime createdTime;
 
     @UpdateTimestamp
-    private LocalDateTime updateTime;
+    private LocalDateTime updatedTime;
 
 //    @Builder // 매개변수의 개수, 순서 유연하게 해줌
 //    public Author(String name, String email, String password, Role role){
@@ -53,15 +54,25 @@ public class Author {
 //        this.password = password;
 //        this.role = role;
 //    }
+    public AuthorListResDto fromEntity(){
+        AuthorListResDto authorListResDto = AuthorListResDto.builder()
+                                        .id(this.id)
+                                        .name(this.name)
+                                        .email(this.email)
+                                        .build();
+        return authorListResDto;
+    }
 
-    public AuthorDetResDto detFromEntity(){
-        LocalDateTime createdTime = this.getCreatedTime();
-        String created = createdTime.getYear()+"년 "+createdTime.getMonthValue()+"월 "+createdTime.getDayOfMonth()+"일";
+    public AuthorDetailDto fromDetEntity(){
+        AuthorDetailDto authorDetailDto = AuthorDetailDto.builder()
+                .id(this.id)
+                .name(this.name)
+                .email(this.email)
+                .password(this.password)
+                .createdTime(this.createdTime)
+                .build();
 
-        LocalDateTime updatedTime = this.getUpdateTime();
-        String updated = updatedTime.getYear()+"년 "+updatedTime.getMonthValue()+"월 "+updatedTime.getDayOfMonth()+"일";
-
-        return new AuthorDetResDto(this.id, this.name, this.email, this.password, this.role, created, updated);
+        return authorDetailDto;
     }
 
 }

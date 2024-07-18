@@ -10,9 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthorSaveReqDto {
+
     private String name;
+
     private String email;
+
     private String password;
+
     private Role role; // 사용자가 String으로 요청해도 Role클래스 자동형변환
 
     // dto에서 entity로 변환

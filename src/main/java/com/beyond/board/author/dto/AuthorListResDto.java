@@ -2,15 +2,21 @@ package com.beyond.board.author.dto;
 
 import com.beyond.board.author.domain.Role;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Data
-public class AuthorResDto {
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class AuthorListResDto {
+
     private Long id;
+
     private String name;
+
     private String email;
-    private Role role;
+
 }

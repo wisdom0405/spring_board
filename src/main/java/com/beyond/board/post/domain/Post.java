@@ -1,8 +1,10 @@
 package com.beyond.board.post.domain;
 
 import com.beyond.board.author.domain.Author;
-import com.beyond.board.post.dto.PostResDto;
+import com.beyond.board.post.dto.PostDetResDto;
+import com.beyond.board.post.dto.PostListResDto;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Post {
@@ -34,9 +37,19 @@ public class Post {
     private LocalDateTime createdTime;
 
     @UpdateTimestamp
-    private LocalDateTime updateTime;
+    private LocalDateTime updatedTime;
 
-//    public PostResDto fromEntity(){
-//        return new PostResDto(this.title, this.contents);
-//    }
+    public PostListResDto listFromEntity(){
+        PostListResDto postListResDto = PostListResDto.builder()
+                .id(this.id)
+                .title(this.title)
+                .author_email(this.author.getEmail())
+                .build();
+
+        return postListResDto;
+    }
+
+    public PostDetResDto detFromEntity(){
+        return null;
+    }
 }
