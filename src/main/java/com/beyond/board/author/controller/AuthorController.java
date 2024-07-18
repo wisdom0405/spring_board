@@ -35,7 +35,7 @@ public class AuthorController {
     public String authorCreatePost(@ModelAttribute AuthorSaveReqDto dto){
         authorService.authorCreate(dto);
 //        return "ok";
-        return "redirect:/";
+        return "redirect:/author/list";
     }
 
     @GetMapping("/author/list")
