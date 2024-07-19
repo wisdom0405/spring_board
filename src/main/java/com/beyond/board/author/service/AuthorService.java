@@ -4,6 +4,7 @@ import com.beyond.board.author.domain.Author;
 import com.beyond.board.author.dto.AuthorDetailDto;
 import com.beyond.board.author.dto.AuthorListResDto;
 import com.beyond.board.author.dto.AuthorSaveReqDto;
+import com.beyond.board.author.dto.AuthorUpdateDto;
 import com.beyond.board.author.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,4 +59,13 @@ public class AuthorService {
         return author;
     }
 
+    public void authorDelete(Long id){
+        authorRepository.deleteById(id);
+    }
+
+    public void authorUpdate(Long id, AuthorUpdateDto dto){
+        Author author = authorRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("id에 해당하는 유저가 없습니다."));
+        author.updateAuthor(dto);
+        authorRepository.save(author);
+    }
 }

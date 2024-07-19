@@ -8,62 +8,29 @@
 
 </head>
 <body>
-    <object style="width:100%" data="../common/header.html" type="text/html"></object>
-    <!-- container : 부스트랩의 컨테이너 클래스는 페이지의 내용을 
-        중앙에 정렬하고 양쪽에 패딩을 추가하고 내용을 감싸는 역할 -->
+    <div th:replace="common/header :: headerFragment"></div>
     <div class="container">
         <div class="page-header"><h3>게시글 목록</h3></div>
-        <!-- btn-primary, btn-secondary 등 여러 버튼 제공 -->
         <div class="float-end">
-        <button class="btn btn-primary">글쓰기</button> 
+            <a href="/post/create" class="btn btn-primary">글쓰기</a>
         </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th>userId</th>
                     <th>id</th>
                     <th>title</th>
-                    <th>body</th>
+                    <th>작성자 email</th>
                 </tr>
             </thead>
-            <tbody id="list">
+            <tbody id="bodyData">
+            <tr th:each = "post : ${postList}">
+                <td th:text = "${post.id}"></td>
+                <td th:text = "${post.title}"></td>
+                <td th:text = "${post.author_email}"></td>
+                <td><a th:href="@{/post/detail/{id}(id = ${post.id})}">상세조회</a></td>
+            </tr>
             </tbody>
         </table>
 </div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    async function DataToList(){
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        // console.log(response.data);
-        const resData = response.data
-        resData.forEach(element =>
-            document.getElementById("list").innerHTML += `<td>${element.userId}</td>
-                                                        <td>${element.id}</td>
-                                                        <td>${element.title}</td>
-                                                        <td>${element.body}</td> <br>`
-        )   
-    }
-    DataToList();
-
-    // 강사님 코드
-    async function serverDat(){
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        const allDtat = response.data;
-        let tbodyData = document.getElementById("bodyData");
-        for(let i=0; i<allData.length; i++){
-            const userId = allData[i].userId;
-            const id = allData[i].id;
-            const title = allData[i].title;
-            const body = allData[i].body;
-
-            bodyData.innerHTML += `<td>${element.userId}</td>
-                                                        <td>${userId}</td>
-                                                        <td>${id}</td>
-                                                        <td>${title}</td> 
-                                                        <td>${body}</td> 
-                                                        <br>`  
-        }
-    }
-</script>
 </body>
 </html>

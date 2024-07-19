@@ -4,10 +4,8 @@ import com.beyond.board.author.domain.Author;
 import com.beyond.board.common.BaseTimeEntity;
 import com.beyond.board.post.dto.PostDetResDto;
 import com.beyond.board.post.dto.PostListResDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.beyond.board.post.dto.PostUpdateDto;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -15,7 +13,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -54,5 +52,10 @@ public class Post extends BaseTimeEntity {
                 .createdTime(this.getCreatedTime())
                 .updatedTime(this.getUpdatedTime())
                 .build();
+    }
+
+    public void updatePost(PostUpdateDto dto){
+        this.title = dto.getTitle();
+        this.contents = dto.getContents();
     }
 }
