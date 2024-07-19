@@ -28,7 +28,8 @@ public class Post extends BaseTimeEntity {
     @Column(length = 3000)
     private String contents;
 
-    @ManyToOne
+    // 연관관계의 주인은 fk가 있는 post (fk를 관리함) - 연관관계의 자식테이블
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
 

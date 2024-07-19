@@ -14,6 +14,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -40,7 +41,9 @@ public class Author extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @OneToMany(mappedBy = "author")
+    // 일반적으로 부모엔티티에 cascade 옵션을 설정한다.
+    // 부모엔티티 : 자식객체에 영향을 끼칠 수 있는 엔티티
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<Post> posts;
 
 //    @Builder // 매개변수의 개수, 순서 유연하게 해줌
