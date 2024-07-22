@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -19,12 +21,19 @@ public class PostSaveReqDto {
     // 추후 로그인 기능 이후에는 없어질 dto
     private String email; // 누가 썼는지 이메일로 검증 (이메일 입력받아서 글 작성)
 
-    public Post toEntity(Author author){
+    private String appointment;
+
+    private String appointmentTime;
+
+    public Post toEntity(Author author, LocalDateTime appointmentTime){
         return Post.builder()
                 .title(this.title)
                 .contents(this.contents)
                 .author(author)
+                .appointment(this.appointment)
+                .appointmentTime(appointmentTime)
                 .build();
     }
+
 
 }

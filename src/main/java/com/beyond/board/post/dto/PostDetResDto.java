@@ -14,15 +14,12 @@ import java.time.LocalDateTime;
 public class PostDetResDto {
 
     private Long id;
-
     private String title;
-
     private String contents;
-
     private String author_email;
-
     private LocalDateTime createdTime;
-
     private LocalDateTime updatedTime;
+    private String appointment;
+    private LocalDateTime appointmentTime;
 
 }

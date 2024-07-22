@@ -15,14 +15,26 @@
                 <label for="title">제목</label>
                 <input type="text" class="form-control" name="title" id="title">
             </div>
+
             <div class="form-group">
                 <label for="contents">내용입력</label>
                 <textarea name="contents" id="contents" class="form-control" rows="10" maxlength="800" placeholder="여기에 글을 쓰세요"></textarea>
             </div>
+
             <div class="form-group">
                 <label for="email">email</label>
                 <input type="text" class="form-control" name="email" id="email">
             </div>
+
+            <div class="form-group">
+                <label>예약여부</label>
+                <input type="radio" name="appointment" value="Y">Yes
+                <input type="radio" name="appointment" value="N" checked>No
+
+                <label>예약시간</label>
+                <input type="datetime-local" name="appointmentTime">
+            </div>
+
             <button type="submit" id="mybutton" class="btn btn-secondary">제출</button>
         </form>
     </div>

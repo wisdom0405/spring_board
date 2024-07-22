@@ -9,10 +9,15 @@ import com.beyond.board.post.dto.PostSaveReqDto;
 import com.beyond.board.post.dto.PostUpdateDto;
 import com.beyond.board.post.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,18 +41,43 @@ public class PostService {
 
     public Post postCreate(PostSaveReqDto dto){
         Author author = authorService.authorFindByEmail(dto.getEmail());
-        Post post = postRepository.save(dto.toEntity(author));
+        String appointment = null;
+        LocalDateTime appointmentTime = null;
+        if(dto.getAppointment().equals("Y") && !dto.getAppointmentTime().isEmpty()){
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+            appointmentTime = LocalDateTime.parse(dto.getAppointmentTime(), dateTimeFormatter);
+            LocalDateTime now = LocalDateTime.now();
+
+            if(appointmentTime.isBefore(now)){
+                throw new IllegalArgumentException("시간입력이 잘못되었습니다.");
+            }
+        }
+        System.out.println(dto);
+        Post post = postRepository.save(dto.toEntity(author, appointmentTime));
         return post;
     }
 
-    public List<PostListResDto> postList(){
-        List<Post> posts = postRepository.findAllFetch();
-        List<PostListResDto> postListResDtos = new ArrayList<>();
-
-        for(Post p : posts){ // p에 author객체 담겨있음
-            postListResDtos.add(p.listFromEntity()); // listFromEntity에서 .author_email(this.author.getEmail())
-        }
+    public Page<PostListResDto> postList(Pageable pageable){
+//        List<Post> posts = postRepository.findAllFetch();
+//        List<PostListResDto> postListResDtos = new ArrayList<>();
+//
+//        for(Post p : posts){ // p에 author객체 담겨있음
+//            postListResDtos.add(p.listFromEntity()); // listFromEntity에서 .author_email(this.author.getEmail())
+//        }
+//        Page<Post> posts = postRepository.findAllNo(pageable);
+        Page<Post> posts = postRepository.findByAppointment(pageable, "N");
+        Page<PostListResDto> postListResDtos = posts.map(a->a.listFromEntity());
         return postListResDtos;
+    }
+
+    public Page<PostListResDto> postListPage(Pageable pageable){
+        //postRepository.findAll() 그냥 이렇게 하면 return : List<Post>
+        //Page객체로 return 하도록 findAll 메소드 커스텀해줘야 함.
+        // (Page 객체가 리스트 형태로 되어있어서 Page객체 안에 List객체를 넣을 필요 없다.
+        Page<Post> posts = postRepository.findAll(pageable);
+        Page<PostListResDto> postListResDtos = posts.map(a->a.listFromEntity());
+        return postListResDtos;
+
     }
 
     public PostDetResDto postDetail(Long id){

@@ -33,6 +33,10 @@ public class Post extends BaseTimeEntity {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    private String appointment;
+
+    private LocalDateTime appointmentTime;
+
     public PostListResDto listFromEntity(){
         PostListResDto postListResDto = PostListResDto.builder()
                 .id(this.id)
@@ -58,5 +62,9 @@ public class Post extends BaseTimeEntity {
     public void updatePost(PostUpdateDto dto){
         this.title = dto.getTitle();
         this.contents = dto.getContents();
+    }
+
+    public void updateAppointment(String yn){
+        this.appointment = yn;
     }
 }
