@@ -1,0 +1,33 @@
+#  .properties 계층구조 중복 발생
+#  #yml, yaml을 통해 들여쓰기 계층구조 사용
+#
+#  port 번호 변경 (default 8080)
+server:
+  port: 8080
+spring :
+  config:
+    active:
+      on-profile: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource :
+    driver-class-name : org.mariadb.jdbc.Driver
+    url : jdbc:mariadb://localhost:3306/board
+    username : root
+    password : 1234
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show_sql: true
+logging:
+  level:
+#    로그레벨: trace < debug < info(default) < error 순서의 로그레벨을 가짐
+#    즉, info로 설정시 trace, debug 로그는 출력되지 않음
+    root: info
+  file:
+#    로그파일 경로와 파일명 지정
+    name: logs/app.log

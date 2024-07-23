@@ -5,6 +5,7 @@ import com.beyond.board.author.dto.AuthorListResDto;
 import com.beyond.board.author.dto.AuthorSaveReqDto;
 import com.beyond.board.author.dto.AuthorUpdateDto;
 import com.beyond.board.author.service.AuthorService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 //@RequestMapping("/")
 public class AuthorController {
@@ -48,10 +50,14 @@ public class AuthorController {
     }
 
     @GetMapping("/author/detail/{id}")
-    public String authorDetail(@PathVariable Long id, Model model){
+    public String authorDetail(@PathVariable Long id, Model model) {
+//        log.info("get요청이고, parameter는 " + id);
+//        log.info("method명: authorDetail");
+
         AuthorDetailDto authorDetailDto = authorService.authorDetail(id);
-        model.addAttribute("author",authorDetailDto);
+        model.addAttribute("author", authorDetailDto);
         return "author/author_detail";
+    }
 
 //        try {
 //        model.addAttribute("author",authorDetailDto);
@@ -60,7 +66,7 @@ public class AuthorController {
 //            e.printStackTrace();
 //            log.error(id); // 이런식으로 try catch 부에서 log.error 해서 로그남김
 //        }
-    }
+
 
     @GetMapping("author/delete/{id}")
     public String authorDelete(@PathVariable Long id){
