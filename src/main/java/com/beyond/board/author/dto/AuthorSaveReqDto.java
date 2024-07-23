@@ -3,6 +3,7 @@ package com.beyond.board.author.dto;
 import com.beyond.board.author.domain.Author;
 import com.beyond.board.author.domain.Role;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class AuthorSaveReqDto {
 
     private String name;

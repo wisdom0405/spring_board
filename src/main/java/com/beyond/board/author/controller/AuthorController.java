@@ -52,6 +52,14 @@ public class AuthorController {
         AuthorDetailDto authorDetailDto = authorService.authorDetail(id);
         model.addAttribute("author",authorDetailDto);
         return "author/author_detail";
+
+//        try {
+//        model.addAttribute("author",authorDetailDto);
+//
+//        }catch (IllegalArgumentException e){
+//            e.printStackTrace();
+//            log.error(id); // 이런식으로 try catch 부에서 log.error 해서 로그남김
+//        }
     }
 
     @GetMapping("author/delete/{id}")
