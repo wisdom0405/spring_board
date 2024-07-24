@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 
@@ -25,9 +27,9 @@ public class AuthorSaveReqDto {
 
     // dto에서 entity로 변환
     // 빌더패턴으로 변환
-    public Author toEntity(){
+    public Author toEntity(String encodedPassword){
             Author author = Author.builder() //.builder() : static 메서드
-                    .password(this.password)
+                    .password(encodedPassword) // 암호화 된 password 받음
                     .name(this.name)
                     .email(this.email)
                     .posts(new ArrayList<>())

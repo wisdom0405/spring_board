@@ -11,6 +11,7 @@ import com.beyond.board.post.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +41,11 @@ public class PostService {
     // jpa가 author객체에서 author_id를 찾아 db에는 author_id가 들어감.
 
     public Post postCreate(PostSaveReqDto dto){
-        Author author = authorService.authorFindByEmail(dto.getEmail());
+        // 로그인 구현 후 postCreate : SecurityContextHolder의 SecurityContextHolder에 담긴 getName(email)가져옴
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Author author = authorService.authorFindByEmail(email);
+
+//        Author author = authorService.authorFindByEmail(dto.getEmail());
         String appointment = null;
         LocalDateTime appointmentTime = null;
         if(dto.getAppointment().equals("Y") && !dto.getAppointmentTime().isEmpty()){
@@ -86,14 +91,28 @@ public class PostService {
     }
 
     public void postDelete(Long id){
-        postRepository.deleteById(id);
+        // 로그인 구현 후 postCreate : SecurityContextHolder의 SecurityContextHolder에 담긴 getName(email)가져옴
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Post post = postRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("id에 해당하는 post가 없습니다."));
+
+        if(!post.getAuthor().getEmail().equals(email)){
+            throw new IllegalArgumentException("본인의 게시글이 아닙니다.");
+        }
+
+        postRepository.delete(post);
     }
 
     @Transactional
     public void postUpdate(Long id, PostUpdateDto dto){
+        // 로그인 구현 후 postCreate : SecurityContextHolder의 SecurityContextHolder에 담긴 getName(email)가져옴
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Author author = authorService.authorFindByEmail(email); // 해당 email에 해당하는 Author객체 가져옴
+
         Post post = postRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("id에 해당하는 게시글이 없습니다."));
+        if(!post.getAuthor().getId().equals(author.getId())){
+            throw new IllegalArgumentException("본인의 게시글이 아닙니다");
+        }
         post.updatePost(dto);
         postRepository.save(post);
     }
-
 }

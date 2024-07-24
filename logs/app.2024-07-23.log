@@ -1,0 +1,834 @@
+2024-07-23 12:08:28.764  INFO 89208 --- [main] com.beyond.board.BoardApplication        : Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 89208 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+2024-07-23 12:08:28.766  INFO 89208 --- [main] com.beyond.board.BoardApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-07-23 12:08:29.181  INFO 89208 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-23 12:08:29.216  INFO 89208 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2024-07-23 12:08:29.566  INFO 89208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-07-23 12:08:29.579  INFO 89208 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-23 12:08:29.579  INFO 89208 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2024-07-23 12:08:29.649  INFO 89208 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-23 12:08:29.650  INFO 89208 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 849 ms
+2024-07-23 12:08:29.711  INFO 89208 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-23 12:08:29.755  INFO 89208 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-23 12:08:29.831  INFO 89208 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-23 12:08:29.860  INFO 89208 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-07-23 12:08:29.961  INFO 89208 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-07-23 12:08:30.022  INFO 89208 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2024-07-23 12:08:30.438  INFO 89208 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-07-23 12:08:30.446  INFO 89208 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-23 12:08:30.878  WARN 89208 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-23 12:08:31.069  WARN 89208 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+2024-07-23 12:08:31.071  INFO 89208 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2024-07-23 12:08:31.083  INFO 89208 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2024-07-23 12:08:31.139  INFO 89208 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-07-23 12:08:31.148  INFO 89208 --- [main] com.beyond.board.BoardApplication        : Started BoardApplication in 2.716 seconds (JVM running for 2.992)
+2024-07-23 12:08:31.149  INFO 89208 --- [main] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2024-07-23 12:29:38.216  INFO 89208 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-23 12:29:38.222  INFO 89208 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-23 12:29:38.228  INFO 89208 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-23 12:33 o.s.boot.SpringApplication-Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not find an appropriate class for property [filter]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@29:20 - no applicable action for [level], current ElementPath  is [[configuration][appender][filter][level]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@30:22 - no applicable action for [onMatch], current ElementPath  is [[configuration][appender][filter][onMatch]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@31:25 - no applicable action for [onMismatch], current ElementPath  is [[configuration][appender][filter][onMismatch]]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.beyond.board.BoardApplication.main(BoardApplication.java:14)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not find an appropriate class for property [filter]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@29:20 - no applicable action for [level], current ElementPath  is [[configuration][appender][filter][level]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@30:22 - no applicable action for [onMatch], current ElementPath  is [[configuration][appender][filter][onMatch]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@31:25 - no applicable action for [onMismatch], current ElementPath  is [[configuration][appender][filter][onMismatch]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+12:37 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 89507 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+12:37 com.beyond.board.BoardApplication-No active profile set, falling back to 1 default profile: "default"
+12:37 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:37 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+12:37 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+12:37 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+12:37 o.a.catalina.core.StandardService-Starting service [Tomcat]
+12:37 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+12:37 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+12:37 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 848 ms
+12:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+12:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+12:37 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+12:37 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+12:37 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+12:37 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+12:37 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+12:37 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+12:37 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+12:37 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+12:37 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+12:37 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+12:37 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+12:37 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+12:37 com.beyond.board.BoardApplication-Started BoardApplication in 2.73 seconds (JVM running for 3.035)
+12:37 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+12:39 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:39 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+12:39 o.s.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+12:39 o.a.c.c.C.[.[.[.[dispatcherServlet]-Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: id에 해당하는 유저가 없습니다.] with root cause
+javax.persistence.EntityNotFoundException: id에 해당하는 유저가 없습니다.
+	at com.beyond.board.author.service.AuthorService.lambda$authorDetail$0(AuthorService.java:54)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:408)
+	at com.beyond.board.author.service.AuthorService.authorDetail(AuthorService.java:54)
+	at com.beyond.board.author.service.AuthorService$$FastClassBySpringCGLIB$$cc00b908.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.beyond.board.author.service.AuthorService$$EnhancerBySpringCGLIB$$239e5f7.authorDetail(<generated>)
+	at com.beyond.board.author.controller.AuthorController.authorDetail(AuthorController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+12:45 c.beyond.board.common.LogController-slfj4를 통한 info로그입니다.
+12:45 c.beyond.board.common.LogController-slfj4를 통한 error 로그입니다.
+12:52 com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m52s554ms).
+12:59 com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m50s959ms).
+13:23 com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m4s1ms).
+13:32 com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m8s250ms).
+13:35 c.beyond.board.common.LogController-slfj4를 통한 info로그입니다.
+13:35 c.beyond.board.common.LogController-slfj4를 통한 error 로그입니다.
+13:35 c.beyond.board.common.LogController-slfj4를 통한 info로그입니다.
+13:35 c.beyond.board.common.LogController-slfj4를 통한 error 로그입니다.
+13:36 c.beyond.board.common.LogController-slfj4를 통한 info로그입니다.
+13:36 c.beyond.board.common.LogController-slfj4를 통한 error 로그입니다.
+13:36 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+13:36 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+13:36 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+13:36 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 89878 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+13:36 com.beyond.board.BoardApplication-No active profile set, falling back to 1 default profile: "default"
+13:36 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:36 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+13:36 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+13:36 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+13:36 o.a.catalina.core.StandardService-Starting service [Tomcat]
+13:36 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+13:36 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+13:36 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 554 ms
+13:36 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+13:36 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+13:36 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+13:36 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+13:36 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:36 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+13:36 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:36 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:36 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:36 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+13:36 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+13:36 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+13:36 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+13:36 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+13:36 com.beyond.board.BoardApplication-Started BoardApplication in 1.964 seconds (JVM running for 2.16)
+13:36 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+13:36 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:36 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+13:36 o.s.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+13:36 c.beyond.board.common.LogController-slfj4를 통한 info로그입니다.
+13:36 c.beyond.board.common.LogController-slfj4를 통한 error 로그입니다.
+13:37 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+13:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+13:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+13:37 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 89891 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+13:37 com.beyond.board.BoardApplication-No active profile set, falling back to 1 default profile: "default"
+13:37 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:37 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+13:37 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+13:37 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+13:37 o.a.catalina.core.StandardService-Starting service [Tomcat]
+13:37 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+13:37 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+13:37 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 582 ms
+13:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+13:37 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+13:37 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+13:37 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+13:37 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:37 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+13:37 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:37 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:37 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:37 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+13:37 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+13:37 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+13:37 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+13:37 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+13:37 com.beyond.board.BoardApplication-Started BoardApplication in 1.867 seconds (JVM running for 2.055)
+13:37 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+13:37 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:37 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+13:37 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+13:37 c.beyond.board.common.LogController-info 로그입니다.
+13:37 c.beyond.board.common.LogController-error 로그입니다.
+13:38 c.beyond.board.common.LogController-info 로그입니다.
+13:38 c.beyond.board.common.LogController-error 로그입니다.
+13:39 c.beyond.board.common.LogController-info 로그입니다.
+13:39 c.beyond.board.common.LogController-error 로그입니다.
+13:44 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+13:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+13:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+13:45 o.s.boot.SpringApplication-Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.beyond.board.BoardApplication.main(BoardApplication.java:14)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+13:45 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 89995 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+13:45 com.beyond.board.BoardApplication-No active profile set, falling back to 1 default profile: "default"
+13:45 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:45 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+13:45 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+13:45 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+13:45 o.a.catalina.core.StandardService-Starting service [Tomcat]
+13:45 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+13:45 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+13:45 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 596 ms
+13:45 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+13:45 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+13:45 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+13:45 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+13:45 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:45 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+13:45 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:45 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:45 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:45 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+13:45 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+13:45 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+13:45 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+13:45 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+13:45 com.beyond.board.BoardApplication-Started BoardApplication in 1.821 seconds (JVM running for 1.985)
+13:45 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+14:04 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+14:04 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+14:04 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2024-07-23 14:04:43.524  INFO 90428 --- [main] com.beyond.board.BoardApplication        : Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90428 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+2024-07-23 14:04:43.526  INFO 90428 --- [main] com.beyond.board.BoardApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-07-23 14:04:43.820  INFO 90428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-23 14:04:43.844  INFO 90428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2024-07-23 14:04:44.079  INFO 90428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-07-23 14:04:44.088  INFO 90428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-23 14:04:44.088  INFO 90428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2024-07-23 14:04:44.132  INFO 90428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-23 14:04:44.133  INFO 90428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 583 ms
+2024-07-23 14:04:44.175  INFO 90428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-23 14:04:44.216  INFO 90428 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-23 14:04:44.275  INFO 90428 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-23 14:04:44.296  INFO 90428 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-07-23 14:04:44.370  INFO 90428 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-07-23 14:04:44.413  INFO 90428 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2024-07-23 14:04:44.699  INFO 90428 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-07-23 14:04:44.702  INFO 90428 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-23 14:04:44.951  WARN 90428 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-23 14:04:45.065  WARN 90428 --- [main] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+2024-07-23 14:04:45.067  INFO 90428 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2024-07-23 14:04:45.075  INFO 90428 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2024-07-23 14:04:45.109  INFO 90428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-07-23 14:04:45.115  INFO 90428 --- [main] com.beyond.board.BoardApplication        : Started BoardApplication in 1.837 seconds (JVM running for 2.045)
+2024-07-23 14:04:45.115  INFO 90428 --- [main] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2024-07-23 14:04:47.668  INFO 90428 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-23 14:04:47.668  INFO 90428 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-23 14:04:47.669  INFO 90428 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-23 14:04:47.681  INFO 90428 --- [http-nio-8080-exec-1] com.beyond.board.common.LogController    : info 로그입니다.
+2024-07-23 14:04:47.681 ERROR 90428 --- [http-nio-8080-exec-1] com.beyond.board.common.LogController    : error 로그입니다.
+2024-07-23 14:09:18.190  INFO 90428 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-23 14:09:18.193  INFO 90428 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-23 14:09:18.199  INFO 90428 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+14:09 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90482 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+14:09 com.beyond.board.BoardApplication-The following 1 profile is active: "prod"
+14:09 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:09 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+14:09 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8081 (http)
+14:09 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8081"]
+14:09 o.a.catalina.core.StandardService-Starting service [Tomcat]
+14:09 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+14:09 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+14:09 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 580 ms
+14:09 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+14:09 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+14:09 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+14:09 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+14:09 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:09 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+14:09 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:09 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:09 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:09 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+14:09 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+14:09 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+14:09 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8081"]
+14:09 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8081 (http) with context path ''
+14:09 com.beyond.board.BoardApplication-Started BoardApplication in 1.798 seconds (JVM running for 1.973)
+14:09 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+14:17 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+14:17 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+14:17 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+14:17 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90531 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+14:17 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+14:17 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:17 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+14:17 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+14:17 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+14:17 o.a.catalina.core.StandardService-Starting service [Tomcat]
+14:17 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+14:17 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+14:17 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 558 ms
+14:17 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+14:17 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+14:17 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+14:17 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+14:17 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:17 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+14:17 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:17 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:17 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:17 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+14:17 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+14:17 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+14:17 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+14:17 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+14:17 com.beyond.board.BoardApplication-Started BoardApplication in 1.781 seconds (JVM running for 1.957)
+14:17 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+14:43 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+14:43 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+14:43 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+14:43 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90785 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+14:43 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+14:43 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:43 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+14:43 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+14:43 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+14:43 o.a.catalina.core.StandardService-Starting service [Tomcat]
+14:43 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+14:43 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+14:43 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1015 ms
+14:43 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+14:43 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+14:43 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+14:43 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+14:43 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:43 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+14:43 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:43 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:43 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:43 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+14:43 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+14:43 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+14:43 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+14:43 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+14:43 com.beyond.board.BoardApplication-Started BoardApplication in 2.914 seconds (JVM running for 3.224)
+14:43 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+14:44 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:44 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+14:44 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+14:44 c.b.b.a.controller.AuthorController-get요청이고, parameter는 1
+14:44 c.b.b.a.controller.AuthorController-method명: authorDetail
+14:45 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+14:45 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+14:45 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+15:11 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90963 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:11 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:11 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:11 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+15:11 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+15:11 o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:11 o.s.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:764)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.beyond.board.BoardApplication.main(BoardApplication.java:14)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:255)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:341)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 36 common frames omitted
+15:13 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90986 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:13 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:13 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:13 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+15:13 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+15:13 o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:13 o.s.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:764)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.beyond.board.BoardApplication.main(BoardApplication.java:14)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:255)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:341)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 36 common frames omitted
+15:14 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90989 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:14 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:14 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:14 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+15:14 o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+15:14 o.s.b.a.l.ConditionEvaluationReportLoggingListener-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:14 o.s.boot.SpringApplication-Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'projectingArgumentResolverBeanPostProcessor' defined in class path resource [org/springframework/data/web/config/ProjectingArgumentResolverRegistrar.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:764)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.beyond.board.BoardApplication.main(BoardApplication.java:14)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:255)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	... 14 common frames omitted
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: org.springframework.streotype.Controller [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198)
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226)
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289)
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:341)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:293)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	... 36 common frames omitted
+15:15 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 90995 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:15 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:15 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:15 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+15:15 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+15:15 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+15:15 o.a.catalina.core.StandardService-Starting service [Tomcat]
+15:15 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+15:15 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+15:15 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1391 ms
+15:15 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+15:15 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+15:15 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+15:15 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+15:15 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:15 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+15:15 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:15 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:15 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:15 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+15:15 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+15:15 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+15:15 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+15:15 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+15:15 com.beyond.board.BoardApplication-Started BoardApplication in 3.559 seconds (JVM running for 3.906)
+15:15 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+15:15 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:15 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+15:15 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+15:15 c.beyond.board.common.AopLogService-aop start
+15:15 c.beyond.board.common.AopLogService-aop end
+15:15 c.beyond.board.common.AopLogService-aop start
+15:15 c.beyond.board.common.AopLogService-aop end
+15:27 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+15:27 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+15:27 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+15:27 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 91079 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:27 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:27 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:27 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+15:27 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+15:27 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+15:27 o.a.catalina.core.StandardService-Starting service [Tomcat]
+15:27 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+15:27 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+15:27 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1113 ms
+15:27 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+15:27 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+15:27 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+15:27 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+15:27 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:27 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+15:27 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:27 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:27 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:27 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+15:27 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+15:27 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+15:27 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+15:27 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+15:27 com.beyond.board.BoardApplication-Started BoardApplication in 3.156 seconds (JVM running for 3.498)
+15:27 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+15:27 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:27 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+15:27 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+15:27 c.beyond.board.common.AopLogService-aop start
+15:27 c.beyond.board.common.AopLogService-Method명 : authorList
+15:27 c.beyond.board.common.AopLogService-HTTP 메서드GET
+15:27 c.beyond.board.common.AopLogService-aop end
+15:27 c.beyond.board.common.AopLogService-aop start
+15:27 c.beyond.board.common.AopLogService-Method명 : postList
+15:27 c.beyond.board.common.AopLogService-HTTP 메서드GET
+15:27 c.beyond.board.common.AopLogService-aop end
+15:34 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+15:34 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+15:34 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+15:34 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 91150 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:34 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:34 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:34 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+15:35 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+15:35 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+15:35 o.a.catalina.core.StandardService-Starting service [Tomcat]
+15:35 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+15:35 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+15:35 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1330 ms
+15:35 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+15:35 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+15:35 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+15:35 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+15:35 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:35 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+15:35 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:35 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:35 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:35 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+15:35 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+15:35 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+15:35 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+15:35 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+15:35 com.beyond.board.BoardApplication-Started BoardApplication in 4.195 seconds (JVM running for 4.572)
+15:35 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+15:35 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:35 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+15:35 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+15:35 c.beyond.board.common.AopLogService-aop start
+15:35 c.beyond.board.common.AopLogService-Method명 : postList
+15:35 c.beyond.board.common.AopLogService-HTTP 메서드GET
+15:35 c.beyond.board.common.AopLogService-aop end
+15:44 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+15:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+15:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+15:44 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 91290 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+15:44 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+15:44 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:44 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+15:44 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+15:44 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+15:44 o.a.catalina.core.StandardService-Starting service [Tomcat]
+15:44 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+15:44 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+15:44 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1047 ms
+15:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+15:44 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+15:44 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+15:44 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+15:44 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:44 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+15:44 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:44 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:44 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:44 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+15:44 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+15:44 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+15:44 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+15:44 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+15:44 com.beyond.board.BoardApplication-Started BoardApplication in 3.34 seconds (JVM running for 3.676)
+15:44 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+15:45 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:45 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+15:45 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+15:45 c.beyond.board.common.AopLogService-aop start
+15:45 c.beyond.board.common.AopLogService-Method명 : authorCreateScreen
+15:45 c.beyond.board.common.AopLogService-HTTP 메서드GET
+15:45 c.beyond.board.common.AopLogService-user inputs : {}
+15:45 c.beyond.board.common.AopLogService-aop end
+15:45 c.beyond.board.common.AopLogService-aop start
+15:45 c.beyond.board.common.AopLogService-Method명 : authorCreatePost
+15:45 c.beyond.board.common.AopLogService-HTTP 메서드POST
+15:45 c.beyond.board.common.AopLogService-user inputs : {"name":["aop"],"email":["aop@naver.com"],"password":["123123123123"],"role":["USER"]}
+15:45 c.beyond.board.common.AopLogService-aop end
+15:45 c.beyond.board.common.AopLogService-aop start
+15:45 c.beyond.board.common.AopLogService-Method명 : authorList
+15:45 c.beyond.board.common.AopLogService-HTTP 메서드GET
+15:45 c.beyond.board.common.AopLogService-user inputs : {}
+15:45 c.beyond.board.common.AopLogService-aop end
+16:03 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+16:03 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+16:03 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+17:14 com.beyond.board.BoardApplication-Starting BoardApplication using Java 11.0.22 on jeongseulgiui-MacBookAir.local with PID 92177 (/Users/wisdom/Documents/GitHub/spring_board/build/classes/java/main started by wisdom in /Users/wisdom/Documents/GitHub/spring_board)
+17:14 com.beyond.board.BoardApplication-The following 1 profile is active: "dev"
+17:14 o.s.d.r.c.RepositoryConfigurationDelegate-Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:14 o.s.d.r.c.RepositoryConfigurationDelegate-Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+17:14 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat initialized with port(s): 8080 (http)
+17:14 o.a.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+17:14 o.a.catalina.core.StandardService-Starting service [Tomcat]
+17:14 o.a.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/9.0.74]
+17:14 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+17:14 o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 697 ms
+17:14 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+17:14 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+17:14 o.h.jpa.internal.util.LogHelper-HHH000204: Processing PersistenceUnitInfo [name: default]
+17:14 org.hibernate.Version-HHH000412: Hibernate ORM core version 5.6.15.Final
+17:14 o.h.annotations.common.Version-HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:14 org.hibernate.dialect.Dialect-HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+17:14 o.h.e.t.j.p.i.JtaPlatformInitiator-HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:14 o.s.o.j.LocalContainerEntityManagerFactoryBean-Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:14 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration-spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:14 o.s.b.a.batch.JpaBatchConfigurer-JPA does not support custom isolation levels, so locks may not be taken when launching Jobs. To silence this warning, set 'spring.batch.jdbc.isolation-level-for-create' to 'default'.
+17:14 o.s.b.c.r.s.JobRepositoryFactoryBean-No database type set, using meta data indicating: MYSQL
+17:14 o.s.b.c.l.support.SimpleJobLauncher-No TaskExecutor has been set, defaulting to synchronous executor.
+17:14 o.s.b.a.s.s.UserDetailsServiceAutoConfiguration-
+
+Using generated security password: fef5d85a-dfdc-45de-81df-ec43eda206ed
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+17:14 o.s.s.web.DefaultSecurityFilterChain-Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@49c72fb7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@565983f3, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e284d90, org.springframework.security.web.header.HeaderWriterFilter@4b99f2ed, org.springframework.security.web.csrf.CsrfFilter@39a1c200, org.springframework.security.web.authentication.logout.LogoutFilter@69e23e94, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f5a680, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@30f54522, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@68024e57, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6908674b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a25f8ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27a23d87, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@72321701, org.springframework.security.web.session.SessionManagementFilter@45a40353, org.springframework.security.web.access.ExceptionTranslationFilter@1a3e8b68, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62536882]
+17:14 o.a.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+17:14 o.s.b.w.e.tomcat.TomcatWebServer-Tomcat started on port(s): 8080 (http) with context path ''
+17:14 com.beyond.board.BoardApplication-Started BoardApplication in 2.143 seconds (JVM running for 2.334)
+17:14 o.s.b.a.b.JobLauncherApplicationRunner-Running default command line with: []
+17:15 o.a.c.c.C.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:15 o.s.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+17:15 o.s.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+17:16 c.beyond.board.common.AopLogService-aop start
+17:16 c.beyond.board.common.AopLogService-Method명 : authorList
+17:16 c.beyond.board.common.AopLogService-HTTP 메서드GET
+17:16 c.beyond.board.common.AopLogService-user inputs : {}
+17:16 c.beyond.board.common.AopLogService-aop end
+17:31 o.s.o.j.LocalContainerEntityManagerFactoryBean-Closing JPA EntityManagerFactory for persistence unit 'default'
+17:31 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+17:31 com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.

@@ -41,6 +41,12 @@ public class AuthorController {
         return "redirect:/author/list";
     }
 
+    @GetMapping("/author/login-screen")
+    public String authorLoginScreen(){
+        return "author/login-screen";
+    }
+
+
     @GetMapping("/author/list")
     public String authorList(Model model){
 //        return authorService.authorList();

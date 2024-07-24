@@ -10,7 +10,7 @@
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 <a href="/" class="navbar-brand mx-auto">게시판 서비스</a>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li sec:authorize="hasRole('ROLE_ADMIN')" class="nav-item">
                         <a href="/author/list" class="nav-link">회원목록</a>
                     </li>
                     <li class="nav-item">
@@ -18,6 +18,12 @@
                     </li>
                     <li class="nav-item">
                         <a href="/author/register" class="nav-link">회원가입</a>
+                    </li>
+                    <li class="nav-item" th:if="${session.email == null}">
+                        <a href="/author/login-screen" class="nav-link"> 로그인</a>
+                    </li>
+                    <li class="nav-item" th:if="${session.email != null}">
+                        <a href="/doLogout" class="nav-link">로그아웃</a>
                     </li>
                 </ul>
             </nav>

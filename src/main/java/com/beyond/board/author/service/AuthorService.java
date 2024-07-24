@@ -8,6 +8,7 @@ import com.beyond.board.author.dto.AuthorUpdateDto;
 import com.beyond.board.author.repository.AuthorRepository;
 import com.beyond.board.post.domain.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,18 +22,25 @@ import java.util.Optional;
 // 다만, 저장 작업 시에는 별도 Transactional 필요
 @Transactional
 public class AuthorService {
+
+    private final PasswordEncoder passwordEncoder;
     private final AuthorRepository authorRepository;
 
     @Autowired
-    public AuthorService(AuthorRepository authorRepository){
+    public AuthorService(AuthorRepository authorRepository,
+                         PasswordEncoder passwordEncoder){
         this.authorRepository = authorRepository;
+        this.passwordEncoder = passwordEncoder;
+
     }
 
     public Author authorCreate(AuthorSaveReqDto dto){
         if(authorRepository.findByEmail(dto.getEmail()).isPresent()){
             throw new IllegalArgumentException("이미 존재하는 Email 입니다.");
         }
-        Author author = dto.toEntity(); // MemberReqDto 객체 메서드
+        // password 암호화해서 넘겨줌
+        Author author = dto.toEntity(passwordEncoder.encode(dto.getPassword())); // MemberReqDto 객체 메서드
+
 //        cascade persist 테스트. remove 테스트 회원삭제로 대체
         // post 할때 author_id가 필요한데 author를 save하기 전까지 id가 안나온다 -> jpa 영속성 context가 알아서 맞춰준다. (선후관계 안따져도 잘 돌아간다)
         author.getPosts().add(Post.builder().title("가입인사").author(author).contents("안녕하세요 "+dto.getName()+" 입니다.").build());
